@@ -1,50 +1,79 @@
-# Welcome to your Expo app 👋
+# Aplicación Móvil de Recetas
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Descripción
 
-## Get started
+Aplicación móvil desarrollada en React Native utilizando Expo Router que permite visualizar recetas de cocina mediante una interfaz moderna e intuitiva.
 
-1. Install dependencies
+El usuario puede navegar entre diferentes recetas, consultar ingredientes, revisar los pasos de preparación y marcar ingredientes como completados.
 
-   ```bash
-   npm install
-   ```
+## Tecnologías Utilizadas
 
-2. Start the app
+- React Native
+- Expo
+- Expo Router
+- TypeScript
+- Expo Linear Gradient
+- React Navigation
+- Expo Vector Icons
 
-   ```bash
-   npx expo start
-   ```
+## Funcionalidades
 
-In the output, you'll find options to open the app in a
+### Pantalla Principal
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Visualización de recetas destacadas.
+- Filtros por categorías.
+- Tarjetas con imagen, tiempo de preparación y dificultad.
+- Navegación hacia el detalle de cada receta.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Pantallas de Detalle
 
-## Get a fresh project
+- Imagen principal de la receta.
+- Lista de ingredientes.
+- Marcado interactivo de ingredientes.
+- Pasos de preparación numerados.
+- Información de tiempo, dificultad y porciones.
 
-When you're ready, run:
+## Estructura del Proyecto
 
-```bash
-npm run reset-project
+```text
+app
+├── _layout.tsx
+├── index.tsx
+├── encebollado.tsx
+├── lasagna.tsx
+└── arroz.tsx
+
+assets
+└── images
+
+styles
+└── colors.ts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Instalación
 
-## Learn more
+### Clonar el repositorio
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone URL_DEL_REPOSITORIO
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Instalar dependencias
 
-## Join the community
+```bash
+npm install
+```
 
-Join our community of developers creating universal apps.
+### Ejecutar la aplicación
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm start
+```
+
+### Abrir la aplicación
+
+Escanear el qr con la App Expo Go desde tu celular
+
+## Autor
+
+Anthony Dávila
