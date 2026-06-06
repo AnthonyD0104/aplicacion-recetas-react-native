@@ -1,24 +1,63 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { COLORS } from '@/styles/colors';
+import { Ionicons } from '@expo/vector-icons';
+import { Stack, router } from 'expo-router';
+import { Pressable } from 'react-native';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: COLORS.white,
+        },
+        headerShadowVisible: false,
+        headerTintColor: COLORS.primary,
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontWeight: '800',
+          fontSize: 18,
+          color: COLORS.text,
+        },
+        headerLeft: ({ canGoBack }) => canGoBack ? (
+          <Pressable 
+            onPress={() => router.back()} 
+            style={({ pressed }) => [
+              {
+                opacity: pressed ? 0.6 : 1,
+                padding: 8,
+                marginLeft: -8,
+              }
+            ]}
+          >
+            <Ionicons name="chevron-back" size={24} color={COLORS.text} />
+          </Pressable>
+        ) : null,
+      }}
+    >
+      <Stack.Screen
+        name="index"
+        options={{
+          headerShown: false, 
+        }}
+      />
+      <Stack.Screen
+        name="encebollado"
+        options={{
+          title: "Encebollado",
+        }}
+      />
+      <Stack.Screen
+        name="lasagna"
+        options={{
+          title: "Lasaña",
+        }}
+      />
+      <Stack.Screen
+        name="arroz"
+        options={{
+          title: "Arroz con Pollo",
+        }}
+      />
+    </Stack>
   );
 }
